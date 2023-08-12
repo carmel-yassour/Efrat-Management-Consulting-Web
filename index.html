@@ -268,9 +268,15 @@
           <p>....</p>
         </div>
 
-        <div class="row">
+        <div class="interior container clearfix">
 
-          <div class="row" id="all-posts"></div>
+          <div class="rowPost" id="all-posts"></div>
+
+          <script src="assets/js/loadPages.js"></script>
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
           <script>
             var wrapper = document.getElementById("all-posts");
@@ -332,11 +338,34 @@
 
             for (var i = 0; i < posts.length; i++) {
               var post = posts[i];
-              myHTML += `<div id="${post.date}" class="col-md-6 icon" ${(i > 2)? 'style="display: none;"': ''}> <div class="card flex-md-row mb-4 box-shadow h-md-250"> <div class="card-body d-flex flex-column align-items-start"> <!-- <strong class="d-inline-block mb-2 text-success">Design</strong> --> <h3 class="mb-0"> <a class="text-dark" href="#">${post.subject}</a> </h3> <div class="mb-1 text-muted">${post.date}</div> <p class="card-text mb-auto">${post.content}</p> <a href="#${post.subject}" onclick="handelPageBigger(this)">Continue reading</a> <button onclick="handelcopy(this)">copy link</button> </div> <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}" data-holder-rendered="true"> </div> </div>`
+              //myHTML += `<div id="${post.date}" class="col-md-6 icon" ${(i > 2)? 'style="display: none;"': ''}> <div class="card flex-md-row mb-4 box-shadow h-md-250"> <div class="card-body d-flex flex-column align-items-start"> <!-- <strong class="d-inline-block mb-2 text-success">Design</strong> --> <h3 class="mb-0"> <a class="text-dark" href="#">${post.subject}</a> </h3> <div class="mb-1 text-muted">${post.date}</div> <p class="card-text mb-auto">${post.content}</p> <a href="#${post.subject}" onclick="handelPageBigger(this)">Continue reading</a> <button onclick="handelcopy(this)">copy link</button> </div> <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}" data-holder-rendered="true"> </div> </div>`
+              myHTML +=  `<div id="${post.date}" ${(i > 1)? 'style="display: none;"': ''} class="col-xs-12 col-sm-6 col-md-12 blogBox"> <div class="item featured"> <img class="imgPost" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}"> <div class="blogTxt"> <div class="blogCategory"> <a href="/">${post.date}</a> </div> <h2>${post.subject}</h2> <p class="pPost post_intro hidden-xs">${post.content}</p> <a href="#${post.subject}" onclick="handelPageBigger(this)">Continue reading</a> <button onclick="handelcopy(this)">copy link</button> </div> </div> </div>`
 
             }
 
             wrapper.innerHTML = myHTML
+
+
+            //handel load more posts
+            var handelLoad = function() {
+              const MAX_CONTENT = 2;
+              let contentShown = $(".blogBox").length - $(".blogBox:hidden").length;
+              let displayButton = contentShown >= MAX_CONTENT;
+              console.log($(".blogBox"), '.blogBox', $(".blogBox:hidden"), "hidden")
+
+              console.log(contentShown, "contentShown", displayButton, "displayButton")
+              if (displayButton) {
+                $(".blogBox:hidden").slice(0, 3).show();
+              } 
+              if ($(".blogBox:hidden").length == 0) {
+                $("#loadMore").fadeOut('slow');
+              }
+              //$(".moreBox:hidden").slice(0, 6).slideDown();
+              //  if ($(".moreBox:hidden").length == 0) {
+              //    $("#loadMore").fadeOut('slow');
+              //  }
+
+            }
 
             //Show post from url href
             console.log("url", window.location.href);
@@ -349,7 +378,21 @@
             }
 
 
+          fetch("https://github.com/carmel-yassour/Efrat-Management-Consulting-Web/blob/main/txt/myFile.txt")
+          .then((res) => res.text())
+          .then((text) => {
+            // do something with "text"
+            //var node = document.getElementById('txt');
+            //node.innerText = "111";  
+           })
+          .catch((e) => console.error(e));
+
+
           </script>
+
+          <div id="loadMore">
+            <a onclick="handelLoad()">Load More</a>
+          </div>
 
             <!-- console.log("url", window.location.href);
             const url = window.location.href;
@@ -422,7 +465,7 @@
 
           <!-- need to work -->
           <!-- <script>
-            fetch("/home/cartyass/projects/mom-web/Management Consulting Web/txt/myFile.txt")
+            fetch("https://github.com/carmel-yassour/Efrat-Management-Consulting-Web/blob/main/txt/myFile.txt")
             .then(function (res) {
                 console.log(res)
             })
