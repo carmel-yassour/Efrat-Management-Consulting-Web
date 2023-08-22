@@ -29,6 +29,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <link href="test/s.css" rel="stylesheet">
+
+
   <!-- =======================================================
   * Template Name: MyResume
   * Updated: Jul 27 2023 with Bootstrap v5.3.1
@@ -261,22 +264,23 @@
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
+      <!-- <div class="container" data-aos="fade-up"> -->
 
         <div class="section-title">
           <h2>פוסטים</h2>
           <p>....</p>
         </div>
 
-        <div class="interior container clearfix">
+        <!-- <div class="interior container clearfix"> -->
 
-          <div class="rowPost" id="all-posts"></div>
+          <!-- <div class="rowPost" id="all-posts"></div> -->
+          <div class="container-posts" id="all-posts">
+
 
           <script src="assets/js/loadPages.js"></script>
           <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
           <script>
             var wrapper = document.getElementById("all-posts");
@@ -326,6 +330,44 @@
               
 
             }
+            //handel page change
+            function myFunction() {
+              var textDiv = document.getElementById("p").parentElement.parentElement;
+              console.log("textdiv", textDiv)
+              var moreText = document.getElementById("p");
+              var btnText = document.getElementById("myBtn");
+        
+              if (btnText.innerHTML == "Read less") {
+                console.log("less")
+                textDiv.style.width = "30%";
+                btnText.innerHTML = "Read more";
+        
+                moreText.style.textOverflow = "ellipsis"
+                moreText.style.overflow = "hidden"
+                moreText.style.maxWidth = "300px"
+                moreText.style.height = "100%"
+                moreText.style.display = "block"
+                moreText.style.whiteSpace = "nowrap";
+                moreText.style.transition= "width 1s ease"
+              } else {
+                console.log("more")
+        
+                textDiv.style.width = "100%";
+                textDiv.style.width = "max-content";
+                textDiv.style.display = "inline-block";
+                textDiv.style.height = "fit-content";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+        
+                moreText.style.textOverflow = ""
+                moreText.style.overflow = ""
+                moreText.style.maxWidth = "100%"
+                moreText.style.height = "100%"
+                moreText.style.display = "block"
+                moreText.style.whiteSpace = "";
+                moreText.style.transition= ""
+              }
+            } 
 
             //Copy url link of post
             var handelcopy = function(element) {
@@ -341,8 +383,8 @@
             for (var i = 0; i < posts.length; i++) {
               var post = posts[i];
               //myHTML += `<div id="${post.date}" class="col-md-6 icon" ${(i > 2)? 'style="display: none;"': ''}> <div class="card flex-md-row mb-4 box-shadow h-md-250"> <div class="card-body d-flex flex-column align-items-start"> <!-- <strong class="d-inline-block mb-2 text-success">Design</strong> --> <h3 class="mb-0"> <a class="text-dark" href="#">${post.subject}</a> </h3> <div class="mb-1 text-muted">${post.date}</div> <p class="card-text mb-auto">${post.content}</p> <a href="#${post.subject}" onclick="handelPageBigger(this)">Continue reading</a> <button onclick="handelcopy(this)">copy link</button> </div> <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}" data-holder-rendered="true"> </div> </div>`
-              myHTML +=  `<div id="${post.date}" href="#${post.date}" ${(i > 1)? 'style="display: none;"': ''} class="col-xs-12 col-sm-6 col-md-12 blogBox"> <div class="item featured"> <img class="imgPost" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}"> <div class="blogTxt"> <div class="blogCategory"> <a>${post.date}</a> </div> <h2>${post.subject}</h2> <p class="pPost post_intro hidden-xs">${post.content}</p> <a onclick="handelPageBigger(this)">Continue reading</a> <button onclick="handelcopy(this)">copy link</button> </div> </div> </div>`
-
+              //myHTML +=  `<div id="${post.date}" href="#${post.date}" ${(i > 1)? 'style="display: none;"': ''} class="col-xs-12 col-sm-6 col-md-12 blogBox"> <div class="item featured"> <img class="imgPost" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}"> <div class="blogTxt"> <div class="blogCategory"> <a>${post.date}</a> </div> <h2>${post.subject}</h2> <p class="pPost post_intro hidden-xs">${post.content}</p> <a onclick="handelPageBigger(this)">Continue reading</a> <button onclick="handelcopy(this)">copy link</button> </div> </div> </div>`
+              myHTML += `<div id="${post.date} href="#${post.date} class="card" style="display:table; height: fit-content;" ${(i > 1)? 'style="display: none;"': ""}>  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover;" class="imgPost" src="/home/cartyass/projects/mom-web/Management Consulting Web/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <div>${post.date}</div>    <h4>${post.subject}</h4> <p id="p" style="text-overflow: ellipsis;overflow: hidden;max-width: 300px;height: 100%;display: block;white-space: nowrap;transition: width 1s ease;"> Lorem ipsum dolor sit amet, consectetur aipiscing elit.       Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget,auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsumdignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravidavenenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</p> <button onclick="myFunction()" id="myBtn">Read More</button> <button onclick="handelcopy(this)">copy link</button></div></div>`
             }
 
             wrapper.innerHTML = myHTML
@@ -368,7 +410,6 @@
               //  }
 
             }
-
             //Show post from url href
             console.log("url", window.location.href);
             const url = window.location.href;
@@ -378,6 +419,7 @@
             if(postId != '') {
               document.getElementById(postId).style.display = 'flex';
             } 
+          
 
 
           fetch("https://github.com/carmel-yassour/Efrat-Management-Consulting-Web/blob/main/txt/myFile.txt")
@@ -395,6 +437,7 @@
           <div id="loadMore">
             <a onclick="handelLoad()">Load More</a>
           </div>
+        </div>
 
             <!-- console.log("url", window.location.href);
             const url = window.location.href;
@@ -483,7 +526,7 @@
           <!-- <iframe src="txt/myFile.txt"></iframe>  -->
 
 
-        </div>
+        <!-- </div> -->
 
     
     </section><!-- End Resume Section -->
