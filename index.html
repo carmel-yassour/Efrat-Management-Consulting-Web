@@ -381,26 +381,33 @@
           </div>
 
           <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
-            <div style=" margin-bottom: 10%; margin-left: 40%; ">
+            <div style=" margin-bottom: 10%; float: right; "> 
+              <!-- margin-left: 40%;  -->
               <button type="button" style="background-color: #538387; border-color: #538387"
                 class="btn btn-primary rounded-circle">30</button>
               <button type="button" style="background-color: #538387; border-color: #538387"
                 class="btn btn-primary">למידה : הקניית כלי / מודל / שיטה</button>
             </div>
 
-            <div style=" margin-bottom: 10%; margin-left : 35%;">
+            <div style=" margin-bottom: 10%; float: right;margin-left: 10%; "> 
+              <!-- margin-left: 40%;  -->
               <button type="button" style="background-color: #6ea5a6; border-color: #6ea5a6"
                 class="btn btn-primary rounded-circle">60</button>
-              <button type="button" style="background-color: #6ea5a6; border-color: #6ea5a6"
-                class="btn btn-primary">התאמה של המודל לסגנון המנהיגותי שלך ולמציאות הניהולית שלך</button>
+              <button type="button" style="width: 80%; background-color: #6ea5a6; border-color: #6ea5a6"
+              class="btn btn-primary">התאמה של המודל לסגנון המנהיגותי שלך ולמציאות הניהולית שלך</button>
+
             </div>
 
-            <div style=" margin-bottom: 10%; margin-left : 30%;">
+            <div style=" margin-bottom: 10%; float: right; "> 
+              <!-- margin-left: 40%;  -->
               <button type="button" style="background-color: #78c8cb; border-color: #78c8cb"
-                class="btn btn-primary rounded-circle">90</button>
-              <button type="button" style="background-color: #78c8cb; border-color: #78c8cb"
-                class="btn btn-primary">התנסות : יישום בפועל בין הפגישות למטרת התפתחות והשגת היעד</button>
+              class="btn btn-primary rounded-circle">90</button>
+            <button type="button" style="width: 80%; background-color: #78c8cb; border-color: #78c8cb"
+              class="btn btn-primary">התנסות : יישום בפועל בין הפגישות למטרת התפתחות והשגת היעד</button>
+
             </div>
+
+           
           </div>
         </div>
 
@@ -483,7 +490,7 @@
             "subject": "פוסט2",
             "date": "Nov11",
             "image": "e10.jpg",
-            "content": "dslghlgj"
+            "content": "myFile.txt"
           },
           {
             "subject": "פוסט3",
@@ -592,7 +599,7 @@
 
           
           var loadTxtFile = function(fileName, postId) {
-            loadFile(fileName, function(text) {
+            loadFile(`text\\${fileName}`, function(text) {
               var node = document.getElementById(`p${postId}`);
               node.innerText = text; 
             }) 
@@ -618,14 +625,10 @@
             const startEvent = new Event("posts-finish");
           }
 
-          //loadFile("posts-list.json", createPosts)
-          createPosts(posts)
-
-          
+          loadFile("posts-list.json", createPosts)
+          //createPosts(posts)
 
         
-
-
           //handel load more posts
           var handelLoad = function () {
             const MAX_CONTENT = 2;
@@ -666,7 +669,7 @@
 
         </script>
 
-        <div id="preloaderPosts"></div>
+        <!-- <div id="preloaderPosts"></div> -->
 
 
         <div id="loadMore">

@@ -1,14 +1,34 @@
 [{
-    "subject": "post1",
+    "subject": "משנותיי",
     "date": "Nov 10",
-    "image": "e1.jpg",
-    "content": "dslghlghlkdkhjfkdjhkdfsdfkhjdfkjhkdfhjfdjkhjdfhdfjkhkhjdfjhkfdjhkfddfjkhfhjdkjdfkhkhjfdhjkdfjkhfdkjhdfjkhdffjhhjdfkhjfdkfdkhjfjgblkjldkfgj"
+    "image": "e10.jpg",
+    "content": "p1.txt"
 },
 {
-    "subject": "post1",
-    "date": "Nov 10",
-    "image": "e1.jpg",
-    "content": "dslghlghlkdkhjfkdjhkdfsdfkhjdfkjhkdfhjfdjkhjdfhdfjkhkhjdfjhkfdjhkfddfjkhfhjdkjdfkhkhjfdhjkdfjkhfdkjhdfjkhdffjhhjdfkhjfdkfdkhjfjgblkjldkfgj"
+    "subject": "שלממממדתי",
+    "date": "Nov 11",
+    "image": "i1.jpg",
+    "content": "p2.txt"
+},
+{
+    "subject": "דברים שלמדתי משנותיי כHRBP",
+    "date": "Nov 12",
+    "image": "portfolio-2.jpg",
+    "content": "p3.txt"
+},
+{
+    "subject": "משנותיי משנותיי משנותיי",
+    "date": "Nov 13",
+    "image": "e2.jpg",
+    "content": "p1.txt"
+},
+{
+    "subject": "משנותיי משנותיי",
+    "date": "Nov 14",
+    "image": "i2.jpg",
+    "content": "p4.txt"
 }]
+
+
 
 
