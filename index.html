@@ -559,30 +559,6 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
         <script>
 
           var wrapper = document.getElementById("all-posts");
-          var posts = [{
-            "subject": "פוסט1",
-            "date": "Nov10",
-            "image": "portfolio-2.jpg",
-            "content": "דךלחכךלגדחכךדגלחעךדגלעח,גדלעח\nfkjhkdfhjfdjkh\\דכעכדעעדכע\njhkfdjhkfddfj\nkhfhjdkjdfkhkh\njfdhjkdfjkh\nfdkjhdfjkhdffjhhjd\דגעדגעדגעדגעדגעדגחיעהלחיהלח\nלרעחיעלגכחעילגכחעףגכחךעיכףחעnfkjhkdfhjfdjkh\\גלרחעילכחעידכלחעילכחדע\nדגחלךגדליעגדךעי\nםדןרידםגןכידןגיםדגןעי\nדזםןרכיםדןעידיעףדשרןעי\n'ףןקדיכףםןדיקכףםןדקיכףםןקדי'\nfkhjfdkfdkh\njfjgblkjldkfgj"
-          }, {
-            "subject": "פוסט2",
-            "date": "Nov11",
-            "image": "e10.jpg",
-            "content": "myFile.txt"
-          },
-          {
-            "subject": "פוסט3",
-            "date": "Nov12",
-            "image": "e2.jpg",
-            "content": ' תבזבזו לי את הזמן לפני המון שנים הכרתי מנכ"ל שההצלחה שלו נבעה בעיקר מהכישרון להשקיע את הזמן שלו באדם שמולו.  מעובדת הניקיון, ללקוחות, לעובדי הארגון, לשותפים, למנהלת הלשכה, לספקים, לקולגות, לדירקטוריון ולסמנכ"לית שלו. לא היה לו הרבה זמן פנוי. הו לא!  אבל את זמן המפגש שתוכנן או שנפל עליו באקראי, הקדיש כל כולו למי שמולו. אני מדברת על: שפת גוף, הבעות פנים סקרניות, שאלות מעצימות, התעניינות אותנטית. ואני מדברת גם על: מתן אפשרות למונולוג ללא התערבות, שולחן נקי, נייד על השתק ומוסתר מהעין. אין צפצופים, התרעות, צלצולים ומבט שמוסט בחופזה למשהו אחר. הקשבה טהורה.גם בפגישה של 5 דקות וגם של שעה, הוא ידע ליצור מרחב מדברי שלו של תשומת לב ממוקדת. כל מי שבא איתו במגע יצא עם הרגשה שהוא חשוב. והלו זה לא מה ש (כמעט) כולנו מחפשים, (כמעט) כל הזמן? הוכחה חיצונית לערך העצמי שלנו, טפיחה לאגו, שמישהו אחר אומר או משדר לנו שאנחנו מרכז העולם. ואת זה הוא נתן ובשפע ולא מתוך אלטרואיזם טהור. בכל זאת מדובר במנכ    על כל השקעת זמן ותשומת לב של אותו מנכ"ל הוא קבל לפחות כפול בחזרה: בנאמנות, בשיתוף של סודות כמוסים והסגרת מתחרים, בביצועים, בקידום האג שלו ע"י אחרים, בתקציב, ביחסים מעולים ובשיווק משובח ונרחב של המוניטין שלו. הוא נתן חשיבות וקבל אותה בחזרה בריבית.אם רק נכנסתם לתפקיד ניהולי או שאתם רוצים לקפוץ מדרגה כמנהלים ואתם שואלים את עצמכם מה לעשות? תתחילו מאימוץ המיומנות הזאת:    תנו לאחרים את הזמן והתשומת לב שלכם באופן מלא, הם יקבלו את ההרגשה שהם חשובים. לא צריך בשביל זה מילים גבוהות ונאומים. אגב, אם תעשו זאת ככותרת, כתמונה אינסטגרמית חלולה, יעלו עליכם. זה חייב להיות אמיתי.בתמונה- מערת נטיפים בסלובקיה. סמ נטיף נוצר כל 15 שנים. קצת פרופורציה על השקעה של זמן, יש יותר מדרך אחת לעשות דב'
-          },
-          {
-            "subject": "פוסט4",
-            "date": "Nov13",
-            "image": "e10.jpg",
-            "content": "myFile.txt"
-          }]
-
 
           var handelPageSmaller = function (element) {
             console.log(element.parentNode.parentNode.parentNode)
@@ -595,8 +571,10 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
 
           //style="display: none;"
 
-          var handelPostBigger = function (textDiv, btnText, moreText) {
+          var handelPostBigger = function (textDiv, btnText, moreTexts) {
             console.log("more")
+            var moreText = moreTexts[0];
+            var fullText = moreTexts[2];
 
             textDiv.style.width = "100%";
             textDiv.style.width = "max-content";
@@ -613,16 +591,28 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
             moreText.style.whiteSpace = "";
             moreText.style.transition = "";
 
-            moreText.style.maxHeight= "fit-content";
+            console.log("fullText", moreText, fullText)
+
+            //moreText.style.maxHeight= "fit-content";
+            fullText.hidden = false
+
+            console.log("sss", moreText.innerText)
+
+            moreText.innerText = moreText.innerText.replace(/...$/,"")
+
 
             //TODO:right  text
           }
 
 
-          var handelPostSmaller = function (textDiv, btnText, moreText) {
+          var handelPostSmaller = function (textDiv, btnText, moreTexts) {
             console.log("less")
             textDiv.style.width = "30%";
             btnText.innerHTML = "המשך לקרוא";
+
+            var moreText = moreTexts[0];
+            var fullText = moreTexts[2];
+
 
             moreText.style.textOverflow = "ellipsis"
             moreText.style.overflow = "hidden"
@@ -631,8 +621,14 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
             moreText.style.display = "block"
             //moreText.style.whiteSpace = "nowrap";
             moreText.style.transition = "width 1s ease"
+
+
+            console.log("fullText", fullText)
+
+            fullText.hidden = true
+            moreText.innerText = moreText.innerText + '...'
             
-            moreText.style.maxHeight= "125px";
+            //moreText.style.maxHeight= "125px";
 
             //TODO: Center text
           }
@@ -644,17 +640,17 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
             console.log("btnText", btnText)
             var textDiv = btnText.parentNode.parentNode;
             console.log("textdiv", textDiv)
-            var moreText = btnText.previousElementSibling;
-            console.log("moreText", moreText)
+            var moreTexts = btnText.previousElementSibling.childNodes;
+            console.log("moreText", moreTexts)
+            //var moreTextId = moreText.previousElementSibling.id;
             //var btnText = document.getElementById("myBtn");
 
             if (btnText.innerHTML == "הקטן קטע") {
-              handelPostSmaller(textDiv, btnText, moreText);
-              document.location.href = `#${textDiv.id}`;
+              handelPostSmaller(textDiv, btnText, moreTexts);
             } else {
-              handelPostBigger(textDiv, btnText, moreText);
-              document.location.href = `#${textDiv.id}`;
+              handelPostBigger(textDiv, btnText, moreTexts);
             }
+            document.location.href = `#${textDiv.id}`;
           }
 
           //Copy url link of post
@@ -677,8 +673,6 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
                 handleFile(text)
               })
               .catch((e) => console.error("ee", e));
-
-              //AIzaSyCBOkLMO8g9A_fGh32rbMv8OyosO1Wd9lM
           }
 
           var loadFile = function(url, handleFile) {
@@ -711,11 +705,19 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
               if(rawFile.readyState === 4)  {
                 if(rawFile.status === 200 || rawFile.status == 0) {
 
-                  console.log(rawFile)
+                  <!-- console.log(rawFile) -->
                   //node.innerText = text;
-                  document.getElementById(`p${postId}`).innerHTML = rawFile.responseText.split('\n').join('<br>'); 
-                  const node = document.getElementById(`p${postId}`);
-                  console.log("aaaa", node);
+                  const contentlines = rawFile.responseText.split('\n')
+                  const postNode = document.getElementById(`p${postId}`)
+                  postNode.innerHTML = contentlines.splice(0, 3).join('<br>') + '...' ; 
+
+                  const full = document.createElement("p");
+                  full.hidden = true;
+                  full.className = "posts-content"
+                  full.innerHTML = contentlines.slice(3, contentlines.length).join('<br>');
+                  postNode.parentElement.appendChild(full);
+
+                  console.log("aaaa", postNode.parentElement.childNodes);
                   return
                  }
               }
@@ -739,7 +741,7 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
               <!-- myHTML += `<div id=" ${post.date}" href="#${post.date}" class="cardPost" style="margin-bottom: 2%; padding: 2%; margin: auto; width: min-content; display:table; height: fit-content; ${(i > 2) ? "display: none;" : ""}">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover;" class="imgPost" src="https://raw.githubusercontent.com/carmel-yassour/Efrat-Management-Consulting-Web/main/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <div >${post.date}</div>    <h4>${post.subject}</h4> <p id="p${post.date}" style="text-overflow: ellipsis;overflow: hidden;max-width: 300px;height: 100%;display: block;white-space: nowrap;transition: width 1s ease;">${post.content}</p> <button onclick="handelPageChange(this)" class="postBtn" id="myBtn">Read More</button> <button class="postBtn" onclick="handelcopy(this)">copy link</button></div></div>` -->
               
               <!-- <embed styles="float:right" type="text/html" src="test/posts/share-button/h.html" >          share voutton -->
-              myHTML += `<div id="${post.date}" href="#${post.date}" class="cardPost" style="min-width: 30%; margin-bottom: 2%; padding: 2%; margin: auto; display:table; height: fit-content; ${(i > 2) ? "display: none;" : ""}">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover; margin-top: 81px;" class="imgPost" src="test/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <h4 class="posts-title">${post.subject}</h4> <div class="posts-date">${post.date}</div> <p class="posts-content" id="p${post.date}" >${post.content}</p> <p>...</p> <button onclick="handelPageChange(this)" class="postBtn" id="myBtn">המשך לקרוא</button> <button class="postBtn" onclick="handelcopy(this)">העתק קישור</button>  </div>      </div></div>` 
+              myHTML += `<div id="${post.date}" href="#${post.date}" class="cardPost" style="min-width: 30%; margin-bottom: 2%; padding: 2%; margin: auto; display:table; height: fit-content; ${(i > 2) ? "display: none;" : ""}">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover; margin-top: 81px;" class="imgPost" src="test/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <h4 class="posts-title">${post.subject}</h4> <div class="posts-date">${post.date}</div> <div><p class="posts-content" styles="max-width: 300px; " id="p${post.date}" >${post.content}</p> </div> <button onclick="handelPageChange(this)" class="postBtn" id="myBtn">המשך לקרוא</button> <button class="postBtn" onclick="handelcopy(this)">העתק קישור</button>  </div>      </div></div>` 
     //if i < 2 
     //myHTML += `<div id="${post.date}" href="#${post.date}" class="cardPost" style="margin-bottom: 2%; padding: 2%; margin: auto; width: min-content; display:table; height: fit-content; ${(i > 2) ? "display: none;" : ""}">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover;" class="imgPost" src="https://raw.githubusercontent.com/carmel-yassour/Efrat-Management-Consulting-Web/main/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <div >${post.date}</div>    <h4>${post.subject}</h4> <p id="p${post.date}" style="text-overflow: ellipsis;overflow: hidden;max-width: 300px;height: 100%;display: block;white-space: nowrap;transition: width 1s ease;">${post.content}</p> <button onclick="handelPageChange(this)" class="postBtn" id="myBtn">Read More</button> <button class="postBtn" onclick="handelcopy(this)">copy link</button></div></div>`
      //<img style="  max-width: 100%;display: block;object-fit: cover;" class="imgPost" src="https://raw.githubusercontent.com/carmel-yassour/Efrat-Management-Consulting-Web/main/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  
