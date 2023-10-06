@@ -462,9 +462,9 @@ section {
 # Facts
 --------------------------------------------------------------*/
 .facts .count-box {
-  padding: 30px 30px 25px 30px;
+  /* padding: 30px 30px 25px 30px;
   margin-top: 30px;
-  width: 100%;
+  width: 100%; */
   position: relative;
   text-align: center;
   background: #fff;
@@ -547,9 +547,9 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Resume
+# Posts
 --------------------------------------------------------------*/
-.posts .posts-title {
+/* .posts .posts-title {
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -605,7 +605,160 @@ section {
   top: 0;
   background: #fff;
   border: 2px solid #0563bb;
+} */
+
+.posts-title {
+  text-align: right;
+  font-weight: bold;
 }
+
+.posts-date {
+  text-align: right;
+  color: #0563bb;
+  size: smaller;
+  font-style: oblique;
+}
+
+
+.posts-content {
+  
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+  height: 100%;
+  display: block;
+  /* white-space: nowrap; */
+  transition: width 1s ease;
+  text-align: justify;
+  direction: rtl;
+  max-height: 125px;
+  line-height: calc(200px / 8);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+/* 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+*/
+
+/* body {
+  font-family: "Quicksand", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #7f7fd5;
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+}  */
+
+.container-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.cardPost {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  /* clamp(20rem, calc(20rem + 2vw), 22rem); */
+  overflow: hidden;
+  /* box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em; */
+  /* background: #ECE9E6; */
+  /* background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+ */
+
+  text-align: center;
+  padding: 70px 20px 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  /* box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05); */
+  /* pointer-events: auto; */
+  
+}
+
+
+.cardPost:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+
+
+.card__body {
+  padding: 1rem;
+  /* display: flex; */
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag+.tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+.tag-brown {
+  background: #D1913C;
+  background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+}
+
+.user__info>small {
+  color: #666;
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1045,6 +1198,11 @@ section {
   }
 }
 
+.recommendation-body {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1264,6 +1422,7 @@ section {
 .imgPost {
   border: 0;
   height: 20%;
+  margin: 20px;
   -ms-interpolation-mode: bicubic;
 }
 
@@ -1470,8 +1629,11 @@ a:visited {
 .postBtn {
   background: #0563bb;
   border: 0;
-  padding: 10px 35px;
+  padding: 5px 16px;
   color: #fff;
   transition: 0.4s;
   border-radius: 50px;
+  float: right;
+  margin-left: 2%;
+  margin-top: 1%;
 }
