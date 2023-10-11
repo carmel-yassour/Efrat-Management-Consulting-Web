@@ -1424,7 +1424,7 @@ img {
 .imgPost {
   border: 0;
   height: 20%;
-  margin: 20px;
+  /* margin: 20px; */
   -ms-interpolation-mode: bicubic;
 }
 
@@ -1631,7 +1631,8 @@ a:visited {
 .postBtn {
   background: #0563bb;
   border: 0;
-  padding: 1% 4%;
+  padding: 1% 4%
+  ;
   color: #fff;
   transition: 0.4s;
   border-radius: 50px;

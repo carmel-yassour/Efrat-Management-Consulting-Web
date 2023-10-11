@@ -704,9 +704,6 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
             rawFile.onreadystatechange = function () {
               if(rawFile.readyState === 4)  {
                 if(rawFile.status === 200 || rawFile.status == 0) {
-
-                  <!-- console.log(rawFile) -->
-                  //node.innerText = text;
                   const contentlines = rawFile.responseText.split('\n')
                   const postNode = document.getElementById(`p${postId}`)
                   postNode.innerHTML = contentlines.splice(0, 3).join('<br>') + '...' ; 
@@ -718,7 +715,7 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
                   postNode.parentElement.appendChild(full);
 
                   console.log("aaaa", postNode.parentElement.childNodes);
-                  return
+                  
                  }
               }
             }
