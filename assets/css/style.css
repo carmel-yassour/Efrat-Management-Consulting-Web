@@ -9,13 +9,25 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+:root {
+  --blue-1: #a1d4d7;
+  --blue-2: #57bcc0;
+  --blue-3: #3e9ea3;
+  --blue-4: #318083;
+  --red-1: #dd8772;
+  --red-2: #c95b47;
+  --red-3: #933516;
+  --red-4: #7a2b14;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
 }
 
 a {
-  color: #0563bb;
+  color: var(--blue-1);
   text-decoration: none;
 }
 

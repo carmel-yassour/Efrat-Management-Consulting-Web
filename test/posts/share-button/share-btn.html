@@ -1,67 +1,284 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles-share-btn.css.css">
 
-	<script src=
-"https://kit.fontawesome.com/704ff50790.js"
-			crossorigin="anonymous">
-	</script>
-
-	<script src="main-share-btn.js"></script>
-</head>
-
-<body class="body-share">
-	<div class="main_box">
-		<input type="checkbox" id="share_button">
-		<label for="share_button">
-			<span class="sharebtn span-a-share span-share">
-				<i class="far fa-share-square"></i>
-			</span>
-		</label>
+	<meta charset="UTF-8">
+	<title>CodePen Demo</title>
+  
+	<meta name="robots" content="noindex">
+  
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"> -->
+	<link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+	<link rel="canonical" href="https://codepen.io/chandrashekhar/pen/ypvdRR">
+  
 	
-		<div class="sm_list">
-			<a class="facebook span-a-share" href="https://www.facebook.com/sharer/sharer.php?u=<URL>">
-				<i class="fab fa-facebook-f"></i>
-			</a>
-			<a class="linkedin span-a-share" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&source={provider}">
-				<i class="fab fa-linkedin-in"></i>
-			</a>
-			<a class="email span-a-share" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com.">
-				<i class="fa fa-envelope"></i>
-			</a>
-			<a class="whatsapp span-a-share" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=urlencodedtext" >
-				<i class="fab fa-whatsapp"></i>
-			</a>
-		</div>
-	</div>
-	<!-- <div id="${post.date}" href="#${post.date}" class="cardPost" style="min-width: 30%; margin-bottom: 2%; padding: 2%; margin: auto; display:table; height: fit-content;">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover; margin-top: 81px;" class="imgPost" src="e2.jpg" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <h4 class="posts-title">lskdg'sflkgj'dfkjg</h4> <div class="posts-date">11.111.11</div> <div><p class="posts-content" styles="max-width: 300px; " id="p${post.date}" >srkgj;ksgh;kfghfl;kdhgdf;lkhgfd;lkhf;dlkfkj;fdlkhjldfkhjdflkjdflkjrieiriroeiroejijodfk;;;;;;;;;;;;;;;;;;;;;;;;;xlfnvnxnfjndghjgkbjgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbklsdllllllllllllllhjjjjjjjjjjjjdfui${post.content}</p> </div> 
-
-<div>
-<div class="main_box">
-	<input type="checkbox" id="share_button">
-	<label for="share_button">
-		<span class="sharebtn span-a-share span-share">
-			<i class="far fa-share-square"></i>
-		</span>
-	</label>
-
-	<div class="sm_list">
-		<a class="facebook span-a-share" href="https://www.facebook.com/sharer/sharer.php?u=<URL>">
-			<i class="fab fa-facebook-f"></i>
-		</a>
-		<a class="linkedin span-a-share" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&source={provider}">
-			<i class="fab fa-linkedin-in"></i>
-		</a>
-		<a class="email span-a-share" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com.">
+	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  
+	
+  
+	
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+  <style id="INLINE_PEN_STYLESHEET_ID">@import url("https://fonts.googleapis.com/css?family=Montserrat");
+  body {
+	font-family: "Montserrat", sans-serif;
+  }
+  
+  .container {
+	height: 70px;
+	padding: 55px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+  }
+  
+  .menu {
+	z-index: 999;
+	position: fixed;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+  }
+  .menu .share i.fa {
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #fff;
+	border-radius: 2px;
+  }
+  .menu .share:hover.bottom .submenu li:nth-child(1) {
+	opacity: 1;
+	top: 50px;
+	transform: rotate(0deg);
+	border-top: 1px dashed #cccccc;
+	transition-delay: 0.08s;
+  }
+  .menu .share:hover.bottom .submenu li:nth-child(2) {
+	opacity: 1;
+	top: 100px;
+	transform: rotate(0deg);
+	border-top: 1px dashed #cccccc;
+	transition-delay: 0.16s;
+  }
+  .menu .share:hover.bottom .submenu li:nth-child(3) {
+	opacity: 1;
+	top: 150px;
+	transform: rotate(0deg);
+	border-top: 1px dashed #cccccc;
+	transition-delay: 0.24s;
+  }
+  .menu .share:hover.bottom .submenu li:nth-child(4) {
+	opacity: 1;
+	top: 200px;
+	transform: rotate(0deg);
+	border-top: 1px dashed #cccccc;
+	transition-delay: 0.32s;
+  }
+  .menu .share:hover.bottom .submenu li:nth-child(5) {
+	opacity: 1;
+	top: 250px;
+	transform: rotate(0deg);
+	border-top: 1px dashed #cccccc;
+	transition-delay: 0.4s;
+  }
+  .menu .share:hover.left .submenu li:nth-child(1) {
+	opacity: 1;
+	left: -51px;
+	transform: rotate(0deg);
+	transition-delay: 0.5s;
+	border-right: 1px dashed #cccccc;
+  }
+  .menu .share:hover.left .submenu li:nth-child(2) {
+	opacity: 1;
+	left: -102px;
+	transform: rotate(0deg);
+	transition-delay: 1s;
+	border-right: 1px dashed #cccccc;
+  }
+  .menu .share:hover.left .submenu li:nth-child(3) {
+	opacity: 1;
+	left: -153px;
+	transform: rotate(0deg);
+	transition-delay: 1.5s;
+	border-right: 1px dashed #cccccc;
+  }
+  .menu .share:hover.left .submenu li:nth-child(4) {
+	opacity: 1;
+	left: -204px;
+	transform: rotate(0deg);
+	transition-delay: 2s;
+	border-right: 1px dashed #cccccc;
+  }
+  .menu .share:hover.left .submenu li:nth-child(5) {
+	opacity: 1;
+	left: -255px;
+	transform: rotate(0deg);
+	transition-delay: 2.5s;
+	border-right: 1px dashed #cccccc;
+  }
+  .menu .share:hover.right .submenu li:nth-child(1) {
+	opacity: 1;
+	left: 50px;
+	transform: rotate(0deg);
+	transition-delay: 0.08s;
+	border-left: 1px dashed #cccccc;
+  }
+  .menu .share:hover.right .submenu li:nth-child(2) {
+	opacity: 1;
+	left: 100px;
+	transform: rotate(0deg);
+	transition-delay: 0.16s;
+	border-left: 1px dashed #cccccc;
+  }
+  .menu .share:hover.right .submenu li:nth-child(3) {
+	opacity: 1;
+	left: 150px;
+	transform: rotate(0deg);
+	transition-delay: 0.24s;
+	border-left: 1px dashed #cccccc;
+  }
+  .menu .share:hover.right .submenu li:nth-child(4) {
+	opacity: 1;
+	left: 200px;
+	transform: rotate(0deg);
+	transition-delay: 0.32s;
+	border-left: 1px dashed #cccccc;
+  }
+  .menu .share:hover.right .submenu li:nth-child(5) {
+	opacity: 1;
+	left: 250px;
+	transform: rotate(0deg);
+	transition-delay: 0.4s;
+	border-left: 1px dashed #cccccc;
+  }
+  .menu .share:hover.top .submenu li:nth-child(1) {
+	opacity: 1;
+	top: -51px;
+	transition-delay: 0.08s;
+	transform: rotateY(0deg);
+	border-bottom: 1px dashed #d9d9d9;
+  }
+  .menu .share:hover.top .submenu li:nth-child(2) {
+	opacity: 1;
+	top: -102px;
+	transition-delay: 0.16s;
+	transform: rotateY(0deg);
+	border-bottom: 1px dashed #d9d9d9;
+  }
+  .menu .share:hover.top .submenu li:nth-child(3) {
+	opacity: 1;
+	top: -153px;
+	transition-delay: 0.24s;
+	transform: rotateY(0deg);
+	border-bottom: 1px dashed #d9d9d9;
+  }
+  .menu .share:hover.top .submenu li:nth-child(4) {
+	opacity: 1;
+	top: -204px;
+	transition-delay: 0.32s;
+	transform: rotateY(0deg);
+	border-bottom: 1px dashed #d9d9d9;
+  }
+  .menu .share:hover.top .submenu li:nth-child(5) {
+	opacity: 1;
+	top: -255px;
+	transition-delay: 0.4s;
+	transform: rotateY(0deg);
+	border-bottom: 1px dashed #d9d9d9;
+  }
+  .menu .submenu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+  }
+  .menu .submenu li {
+	transition: all ease-in-out 0.5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0;
+  }
+  .menu .submenu li a {
+	color: #212121;
+  }
+  .menu .submenu li a:hover i.fa {
+	color: #fff;
+  }
+  .menu .submenu li a:hover.facebook i.fa {
+	background-color: #3b5999;
+  }
+  .menu .submenu li a:hover.twitter i.fa {
+	background-color: #55acee;
+  }
+  .menu .submenu li a:hover.linkedin i.fa {
+	background-color: #0a66c2;
+  }
+  .menu .submenu li a:hover.email i.fa {
+	background-color: #e4405f;
+  }
+  .menu .submenu li a:hover.whatsapp i.fa {
+	background-color: #25d366;
+  }
+  .menu .submenu li:nth-child(1) {
+	transform: rotateX(45deg);
+  }
+  .menu .submenu li:nth-child(2) {
+	transform: rotateX(90deg);
+  }
+  .menu .submenu li:nth-child(3) {
+	transform: rotateX(135deg);
+  }
+  .menu .submenu li:nth-child(4) {
+	transform: rotateX(180deg);
+  }
+  .menu.topLeft {
+	top: 10px;
+	left: 10px;
+  }
+  .menu.topRight {
+	top: 10px;
+	right: 10px;
+  }
+  .menu.bottomLeft {
+	bottom: 10px;
+	left: 10px;
+  }
+  .menu.bottomRight {
+	bottom: 10px;
+	right: 10px;
+  }</style></head>
+  
+  <body>
+	
+  <ul class="menu topLeft">
+	<li class="share bottom">
+	  <i class="fa fa-share-alt"></i>
+	  <ul class="submenu">
+		<li><a class="twitter" href="#" >
+			<label title="copy link"><i class="fa fa-copy"></i></label>
+			
+		</a></li>
+		<li><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<URL>">
+			<i class="fa fa-facebook-f"></i>
+		</a></li>
+		<li><a class="linkedin" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&source={provider}">
+			<i class="fa fa-linkedin"></i>
+		</a></li>
+		<li><a class="email" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com.">
 			<i class="fa fa-envelope"></i>
-		</a>
-		<a class="whatsapp span-a-share" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=urlencodedtext" >
-			<i class="fab fa-whatsapp"></i>
-		</a>
-	</div>
-</div>
-</div>   
-</div> -->
-</body>
-</html>
+		</a></li>
+		<li><a class="whatsapp" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=urlencodedtext" >
+			<i class="fa fa-whatsapp"></i>
+		</a></li>
+	  </ul>
+	</li>
+  </ul>
+  
+  </body>
