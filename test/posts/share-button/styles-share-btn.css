@@ -5,20 +5,20 @@ body{
   background-color: #B2B1CF;;
   font-family: 'Montserrat', sans-serif;
 }
-.container{
+.share-btn-container{
   height:70px;
   padding:55px;
-  position:fixed;
-  top: 0;
+  /* position:fixed; */
+  /* top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   margin:auto;
   text-align:center;
 }
 
 
-.menu{
+.share-btn-menu{
   z-index:999;
   position:fixed;
   padding:0;
