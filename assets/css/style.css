@@ -1188,6 +1188,44 @@ img {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
+.section-title-contact {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title-contact h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: var(--section-color);
+}
+
+.section-title-contact h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title-contact h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--red-2);
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
 .contact .info {
   width: 100%;
   background: #fff;
@@ -1195,7 +1233,7 @@ img {
 
 .contact .info i {
   font-size: 20px;
-  color: #3e9ea3;
+  color: var(--red-2);
   float: left;
   width: 44px;
   height: 44px;
@@ -1230,7 +1268,7 @@ img {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #3e9ea3;
+  background: var(--red-2);
   color: #fff;
 }
 
@@ -1301,7 +1339,7 @@ img {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #3e9ea3;
+  background: var(--red-3);
   border: 0;
   padding: 10px 35px;
   color: #fff;
@@ -1310,7 +1348,7 @@ img {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: var(--blue-4);
+  background: var(--red-4);
 }
 
 @keyframes animate-loading {
@@ -1525,7 +1563,7 @@ a:visited {
 }
 
 #loadMore a {
-  background: var(--red-3);
+  background: var(--blue-4);
   border-radius: 50px;
   color: white;
   display: inline-block;
@@ -1535,7 +1573,7 @@ a:visited {
 }
 
 #loadMore a:hover {
-  background-color: var(--red-4);
+  background-color: var(--blue-1);
 }
 
 .blogBox .featured .blogTxt {
