@@ -99,12 +99,10 @@
       <p>יועצת ארגונית | מאמנת למנהיגות</p> -->
       <!-- <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p> -->
       <div class="social-links">
-        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> -->
-        <a href="#" class="instagram"><i class='bx bxl-gmail'></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="#" class="whatsapp"><i class='bx bxl-whatsapp'></i></a>
+        <a class="instagram" href="mailto:?to=efrat.yassour@gmail.com" target="_blank"><i class="bx bxl-gmail"></i></a>
+        <a class="whatsapp" href="https://api.whatsapp.com/send?phone=0528890636" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+        <a class="facebook" href="https://www.facebook.com/efrat.yassour.5/" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a class="linkedin" href="https://www.linkedin.com/in/efratyassour/" target="_blank"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -491,7 +489,7 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
 
       <!-- <div class="container" data-aos="fade-up"> -->
 
-      <div class="section-title">
+      <div class="section-title" data-aos="fade-up">
         <h2>פוסטים</h2>
       </div>
       <div class="row" id="all-posts" style="margin-right: 10%; margin-left: 10%">
@@ -681,7 +679,7 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
               var post = posts[i];
               console.log(post)
               <!-- margin: auto -->
-              myHTML += `<div id="${post.date}" href="#${post.date}" class="cardPost" style="min-width: 30%; margin-bottom: 2%; padding: 2%; margin-top: 3%; margin-bottom: 3%;display:table; height: fit-content; ${(i > 2) ? "display: none;" : ""}">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover; margin-top: 81px;" class="imgPost" src="test/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <h4 class="posts-title">${post.subject}</h4> <div class="posts-date">${post.date}</div> <div><p class="posts-content" styles="max-width: 300px; " id="p${post.date}" >${post.content}</p> </div><button onclick="handelPageChange(this)" class="postBtn" id="b-${post.date}">המשך לקרוא</button> 	<a class="share-icon twitter" onclick="handelcopy(this)"><label title="copy link"><i class="fa fa-copy"></i></label></a><a class="share-icon email" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com."><i class="fa fa-envelope"></i></a><a class="share-icon whatsapp" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=urlencodedtext" ><i class="fa fa-whatsapp"></i></a><a class="share-icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=<URL>"><i class="fa fa-facebook-f"></i></a><a class="share-icon linkedin" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&source={provider}"><i class="fa fa-linkedin"></i></a>              </div>          </div>    </div></div>`               
+              myHTML += `<div id="${post.date}" href="#${post.date}" class="cardPost" style="min-width: 30%; margin-bottom: 2%; padding: 2%; margin-top: 3%; margin-bottom: 3%;display:table; height: fit-content; ${(i > 2) ? "display: none;" : ""}">  <div class="card__header" style="position: inherit;float: left;"> <img style="  max-width: 100%;display: block;object-fit: cover; margin-top: 81px;" class="imgPost" src="test/posts/img/${post.image}" alt="card__image"      class="card__image" width="400">  </div>  <div class="card__body">    <h4 class="posts-title">${post.subject}</h4> <div class="posts-date">${post.date}</div> <div><p class="posts-content" styles="max-width: 300px; " id="p${post.date}" >${post.content}</p> </div><button onclick="handelPageChange(this)" class="postBtn" id="b-${post.date}">המשך לקרוא</button><dir class="social-post" id="sp-${post.date}"> <a class="share-icon twitter" onclick="handelcopy(this)"><label title="copy link"><i class="fa fa-copy"></i></label></a><a class="share-icon email" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com."><i class="fa fa-envelope"></i></a><a class="share-icon whatsapp" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=urlencodedtext" ><i class="fa fa-whatsapp"></i></a><a class="share-icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=<URL>"><i class="fa fa-facebook-f"></i></a><a class="share-icon linkedin" href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&source={provider}"><i class="fa fa-linkedin"></i></a> </div>     </div>    </div></div>`               
             }
             wrapper.innerHTML = myHTML
             for (var i = 0; i < posts.length; i++) {
@@ -698,7 +696,9 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
           console.log(hashPost, "textdiv-iddd", textDiv)
           var btnText = document.getElementById(`b-${hashPost}`);
           console.log("btnText", btnText)
-          var moreTexts = document.getElementById(`p${hashPost}`);
+          //var moreTexts = document.getElementById(`p${hashPost}`);
+          var moreTexts = btnText.previousElementSibling.childNodes;
+            
           console.log("moreText", moreTexts)
           
           handelPostBigger(textDiv, btnText, moreTexts);
@@ -790,6 +790,12 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
         <div class="section-title-contact" >
           <h2 >יצירת קשר</h2>
           <p style="direction: rtl;">מזמינה אותך לשעת שיחה לבדיקת התאמה, ללא עלות וללא התחייבות. </p>
+          <div class="social-links">
+            <a class="instagram" href="mailto:efrat.yassour@gmail.com" target="_blank"><i class="bx bxl-gmail"></i></a>
+            <a class="whatsapp" href="https://api.whatsapp.com/send?phone=0528890636" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+            <a class="facebook" href="https://www.facebook.com/efrat.yassour.5/" target="_blank"><i class="bx bxl-facebook"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/in/efratyassour/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          </div>
         </div>
 
         <div class="row mt-1">
@@ -801,15 +807,14 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
                 <h4>Location:</h4>
                 <p>A108 Adam Street, New York, NY 535022</p>
               </div> -->
-
-              <div href="mailto:efrat.yassour@gmail.com?subject=פניה מהאתר" class="email">
-                <i class="bi bi-envelope"></i>
+              <div class="email">
+                <a href="mailto:efrat.yassour@gmail.com?subject=פניה מהאתר" ><i class="bi bi-envelope"></i></a>
                 <h4>מייל</h4>
                 <p>efrat.yassour@gmail.com</p>
               </div>
 
-              <div href="tel:0528890636" class="phone">
-                <i class="bi bi-phone"></i>
+              <div class="phone">
+                <a href="tel:0528890636"><i class="bi bi-phone"></i></a>    
                 <h4>טלפון</h4>
                 <p>0528890636</p>
               </div>
@@ -825,44 +830,35 @@ HR לסטארט-אפ: אחרי לחיצה ההסבר: גדולים מ10 וקטנ
 
             <script type="text/javascript">
               function sendEmail() {
-                Email.send({
-                  Host: "smtp.gmail.com", //Change to real data from objects
-                  Username: "sender@email_address.com",
-                  Password: "Enter your password",
-                  To: 'receiver@email_address.com',
-                  From: "sender@email_address.com",
-                  Subject: "Sending Email using javascript",
-                  Body: "Well that was easy!!",
-                })
-                  .then(function (message) {
-                    alert("sent successfully")
-                  });
+                <!-- window.open(`mailto:test@example.com?subject=subject&body=body`); -->
+                console.log(`mailto:efrat.yassour@gmail.com?subject=${document.getElementById("subject").value}&body=ddddd`)
+                window.open(`mailto:efrat.yassour@gmail.com?subject=${document.getElementById("subject").value}&body=${document.getElementById("message").value}`);
               }
             </script>
 
             <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
-            <form role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group" style="direction: rtl;">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="שם" required>
+              <form role="form" class="php-email-form">
+                <div class="row">
+                  <!-- <div class="form-group" style="direction: rtl;">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="שם" required>
+                  </div> -->
+                  <!-- <div class="col-md-6 form-group mt-3 mt-md-0" style="direction: rtl;">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="מייל" required>
+                  </div> -->
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0" style="direction: rtl;">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="מייל" required>
+                <div class="form-group mt-3" style="direction: rtl;">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="איך אני יכולה לעזור?" required>
                 </div>
-              </div>
-              <div class="form-group mt-3" style="direction: rtl;">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="איך אני יכולה לעזור?" required>
-              </div>
-              <div class="form-group mt-3" style="direction: rtl;">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3" style="direction: rtl;">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">ההודעה נשלחה בהצלחה, תודדה רבה!</div>
-              </div>
-              <div class="text-center"><button type="submit" onclick="sendEmail()">שלח הודעה</button></div>
-            </form>
+                <div class="form-group mt-3" style="direction: rtl;">
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="הודעה" required></textarea>
+                </div>
+                <!-- <div class="my-3" style="direction: rtl;">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">ההודעה נשלחה בהצלחה, תודדה רבה!</div>
+                </div> -->
+                <div class="text-center"><button type="submit" onclick="sendEmail()">שלח הודעה</button></div>
+              </form>
 
           </div>
 
